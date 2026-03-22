@@ -73,6 +73,21 @@ export default async function PackagePage({ params }: { params: Promise<{ slug: 
             >
               view on npm
             </a>
+            {pkg.githubUrl && (
+              <a
+                href={pkg.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-xs border border-gray-300 px-4 py-2 hover:border-black transition-colors text-center"
+              >
+                view on github
+              </a>
+            )}
+            {pkg.githubUrl && (
+              <span className="font-mono text-xs border border-black bg-black text-white px-4 py-2 text-center">
+                open source
+              </span>
+            )}
             <Link
               href={`/packages/${pkg.slug}/versions`}
               className="font-mono text-xs border border-gray-300 px-4 py-2 hover:border-black transition-colors text-center"
